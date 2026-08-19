@@ -7,24 +7,8 @@
   <meta name="description" content="Guía del huésped de Sie Casa Hotel en Villa de Leyva.">
   <title>Inicio | Sie Casa Hotel</title>
  <link rel="icon" type="image/png" href="imagenes/logo-sie.png">
-  <!--
-    IMÁGENES QUE DEBES AGREGAR:
-    imagenes/logo-sie.png
-    imagenes/Banner_.jpg
-    imagenes/iconos/bienvenida.svg
-    imagenes/iconos/como-llegar.svg
-    imagenes/iconos/check-in.svg
-    imagenes/iconos/wifi.svg
-    imagenes/iconos/reglas.svg
-    imagenes/iconos/preguntas.svg
-    imagenes/iconos/tiendas.svg
-    imagenes/iconos/restaurantes.svg
-    imagenes/iconos/lugares.svg
-    imagenes/iconos/experiencias.svg
-    imagenes/iconos/transporte.svg
-    imagenes/iconos/calificar.svg
-  -->
-
+ <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+ 
   <style>
     :root {
       --azul-950: #00364c;
@@ -487,5 +471,16 @@
       if (evento.key === 'Escape') cambiarMenu(false);
     });
   </script>
+  <script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 </body>
 </html>
