@@ -1,0 +1,16 @@
+GUÍA EDITABLE — SIE CASA HOTEL
+
+Este paquete ya está conectado al panel /admin/.
+
+CÓMO ACTUALIZAR:
+1. Sube/reemplaza TODO el contenido de esta carpeta en la raíz del repositorio GitHub.
+2. Haz Commit changes.
+3. Espera el deploy de Netlify.
+4. Entra a https://guia-huespedes-grupo-sie.netlify.app/admin/
+5. Edita Información del hotel o Textos de la guía y pulsa Guardar/Publicar.
+
+Los principales datos de Wi-Fi, check-in/check-out, desayuno, parqueadero,
+estación de café, enlaces de reserva, WhatsApp, sitio web, bienvenida y reseña
+se cargan desde /contenido/*.json mediante /js/cms-data.js.
+
+No elimines las carpetas admin, contenido ni js.

@@ -377,14 +377,14 @@
         <article class="tarjeta-info destacada">
           <div class="icono" aria-hidden="true">⚿</div>
           <h3>Casa A</h3>
-          <p><strong>Red: Casasie2_5G.</strong></p>
-          <p><strong>Clave: Sie2026#</strong></p>
+          <p><strong data-cms-template="wifi-a-red">Red: Casasie2_5G.</strong></p>
+          <p><strong data-cms-template="wifi-a-clave">Clave: Sie2026#</strong></p>
         </article>
 
         <article class="tarjeta-info azul">
           <div class="icono" aria-hidden="true">⚿</div>
           <h3>Casa B</h3>
-          <p><strong>Todas las reds de Casa B :</strong> Clave: Casasieb2026<br> </p>
+          <p><strong data-cms-template="wifi-b">Todas las redes de Casa B: Clave: Casasieb2026</strong></p>
         </article>
       </div>
 
@@ -393,14 +393,14 @@
         <h2 id="titulo-ayuda-wifi">Si tienes inconvenientes con la conexión</h2>
         <p>Comunícate con recepción para recibir asistencia.</p>
         <div class="acciones">
-          <a class="boton boton-principal" href="https://wa.me/573124510742">Contactar recepción ›</a>
+          <a class="boton boton-principal" data-cms-href="whatsapp_recepcion" href="https://wa.me/573124510742">Contactar recepción ›</a>
           <a class="boton boton-secundario" href="index.html#guia">Volver a la guía</a>
         </div>
       </section>
     </section>
 
     <footer class="pie">
-  <a href="https://siecasahotel.com/sie-casahotel/" target="_blank" rel="noopener">
+  <a data-cms-href="sitio_web" href="https://siecasahotel.com/sie-casahotel/" target="_blank" rel="noopener">
     <strong>Sie Casa Hotel</strong>
     <p>Villa de Leyva, Boyacá</p>
   </a>
@@ -455,5 +455,6 @@
       if (evento.key === 'Escape') cambiarMenu(false);
     });
   </script>
+  <script src="js/cms-data.js"></script>
 </body>
 </html>

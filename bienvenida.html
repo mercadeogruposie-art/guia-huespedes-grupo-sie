@@ -396,9 +396,9 @@
     <section class="contenido" aria-labelledby="titulo-inicio">
       <div class="intro">
         <p class="sobretitulo">Tu casa en Villa de Leyva</p>
-        <h2 id="titulo-inicio">Bienvenido a Sie Casa Hotel</h2>
+        <h2 id="titulo-inicio" data-cms="titulo">Bienvenido a Sie Casa Hotel</h2>
         <span class="ornamento" aria-hidden="true"><span></span></span>
-        <p>Nos alegra recibirte. Esta guía fue creada para que tengas a la mano la información esencial del hotel y puedas disfrutar tu visita con mayor facilidad.</p>
+        <p><span data-cms="texto">Nos alegra recibirte. Esta guía fue creada para que tengas a la mano la información esencial del hotel y puedas disfrutar tu visita con mayor facilidad.</span></p>
       </div>
 
     <section class="carrusel-seccion" aria-labelledby="titulo-carrusel">
@@ -444,7 +444,7 @@
 
 
     <footer class="pie">
-  <a href="https://siecasahotel.com/sie-casahotel/" target="_blank" rel="noopener">
+  <a data-cms-href="sitio_web" href="https://siecasahotel.com/sie-casahotel/" target="_blank" rel="noopener">
     <strong>Sie Casa Hotel</strong>
     <p>Villa de Leyva, Boyacá</p>
   </a>
@@ -531,5 +531,6 @@
       if (evento.key === 'Escape') cambiarMenu(false);
     });
   </script>
+  <script src="js/cms-data.js"></script>
 </body>
 </html>

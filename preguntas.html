@@ -429,7 +429,7 @@
         </details>
 
         <details class="faq-item">
-          <summary>¿Dónde se sirve el desayuno y en qué horario?</summary>
+          <summary>¿Dónde se sirve <span data-cms-template="pregunta-desayuno">El desayuno se sirve en Chuska Cocina de 8:30 a. m. a 11:00 a. m.</span></summary>
           <div class="faq-respuesta"><p>El desayuno se sirve en <strong>Chuska Cocina</strong>, de <strong>8:30 a. m. a 11:00 a. m.</strong></p></div>
         </details>
 
@@ -476,14 +476,14 @@ El alojamiento con mascota tiene un costo adicional que se cobra una sola vez y 
         <h2 id="titulo-ayuda-faq">Estamos para ayudarte</h2>
         <p>Si tienes una pregunta diferente o necesitas apoyo, comunícate con recepción.</p>
         <div class="acciones">
-          <a class="boton boton-principal" href="https://wa.me/573124510742">Contactar recepción ›</a>
+          <a class="boton boton-principal" data-cms-href="whatsapp_recepcion" href="https://wa.me/573124510742">Contactar recepción ›</a>
           <a class="boton boton-secundario" href="index.html#guia">Volver a la guía</a>
         </div>
       </section>
     </section>
 
    <footer class="pie">
-  <a href="https://siecasahotel.com/sie-casahotel/" target="_blank" rel="noopener">
+  <a data-cms-href="sitio_web" href="https://siecasahotel.com/sie-casahotel/" target="_blank" rel="noopener">
     <strong>Sie Casa Hotel</strong>
     <p>Villa de Leyva, Boyacá</p>
   </a>
@@ -541,5 +541,6 @@ El alojamiento con mascota tiene un costo adicional que se cobra una sola vez y 
       if (evento.key === 'Escape') cambiarMenu(false);
     });
   </script>
+  <script src="js/cms-data.js"></script>
 </body>
 </html>

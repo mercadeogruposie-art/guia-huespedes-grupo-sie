@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#004b66">
+  <meta name="description" content="Guía del huésped de Sie Casa Hotel en Villa de Leyva.">
+  <title>Inicio | Sie Casa Hotel</title>
+ <link rel="icon" type="image/png" href="imagenes/logo-sie.png">
+ <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+ 
+  <style>
+    :root {
+      --azul-950: #00364c;
+      --azul-900: #004b66;
+      --azul-800: #075c75;
+      --texto: #073f5a;
+      --naranja: #ff842b;
+      --naranja-claro: #ffa454;
+      --menta: #57c9bf;
+      --fondo: #fbfaf7;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Arial, Helvetica, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      overflow-x: hidden;
+      background: var(--fondo);
+      color: var(--texto);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    body.menu-abierto { overflow: hidden; }
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { font: inherit; }
+    img { display: block; max-width: 100%; }
+    [hidden] { display: none !important; }
+
+    .cabecera-fondo {
+      padding: 0 18px 22px;
+      background:
+        radial-gradient(circle at 12% 4%, rgba(40, 153, 176, .32), transparent 26%),
+        linear-gradient(135deg, #00394f, #005570 70%, #00435e);
+    }
+    .cabecera {
+      width: min(1180px, 100%);
+      height: 118px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .marca {
+      width: 104px;
+      height: 76px;
+      display: grid;
+      place-items: center;
+      color: white;
+      text-align: center;
+    }
+    .logo-img {
+      width: 88%;
+      height: 88%;
+      object-fit: contain;
+    }
+    .logo-respaldo { display: grid; place-content: center; text-shadow: 0 1px 12px rgba(0,0,0,.18); }
+    .logo-simbolo { color: var(--naranja); font-size: 27px; line-height: .7; }
+    .logo-nombre { font-family: var(--serif); font-size: 54px; line-height: .8; letter-spacing: -5px; }
+    .logo-leyenda { margin-top: 7px; color: var(--naranja-claro); font-size: 8px; letter-spacing: 5px; }
+    .menu-escritorio { display: none; align-items: center; gap: 34px; color: rgba(255,255,255,.94); font-weight: 700; }
+    .menu-escritorio a { padding: 12px 4px; border-bottom: 2px solid transparent; }
+    .menu-escritorio a:hover { border-color: var(--naranja); }
+    .boton-menu {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 16px;
+      color: white;
+      background: rgba(255,255,255,.08);
+      cursor: pointer;
+    }
+    .hamburguesa, .hamburguesa::before, .hamburguesa::after {
+      width: 28px;
+      height: 3px;
+      display: block;
+      border-radius: 99px;
+      background: currentColor;
+    }
+    .hamburguesa { position: relative; }
+    .hamburguesa::before, .hamburguesa::after { content: ""; position: absolute; left: 0; }
+    .hamburguesa::before { top: -9px; }
+    .hamburguesa::after { top: 9px; }
+
+    .portada {
+      position: relative;
+      width: min(1240px, 100%);
+      min-height: 520px;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 30px;
+      isolation: isolate;
+      box-shadow: 0 24px 55px rgba(0, 28, 42, .24);
+    }
+    .portada::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background: url("imagenes/Banner_.jpg") center center / cover no-repeat;
+    }
+    .portada::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(90deg, rgba(0,43,59,.90), rgba(0,47,63,.55) 48%, rgba(0,43,59,.10) 82%);
+    }
+    .contenido-portada {
+      width: min(690px, 100%);
+      padding: 66px 42px 58px;
+      color: white;
+    }
+    .etiqueta {
+      margin: 0 0 22px;
+      color: #ffd0a9;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .portada h1 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(3rem, 10vw, 5.2rem);
+      font-weight: 400;
+      line-height: .99;
+      letter-spacing: -.035em;
+    }
+    .separador { width: 220px; margin: 34px 0 26px; display: flex; align-items: center; }
+    .separador::before { content: ""; flex: 1; height: 2px; background: var(--naranja); }
+    .separador::after { content: ""; width: 12px; height: 12px; background: var(--naranja); transform: rotate(45deg); }
+    .descripcion-portada { margin: 0 0 36px; font-size: clamp(1.28rem, 4vw, 1.65rem); line-height: 1.4; }
+    .boton-principal, .boton-contacto {
+      min-height: 58px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .boton-principal {
+      min-width: min(100%, 318px);
+      padding: 0 28px;
+      color: var(--azul-950);
+      background: linear-gradient(100deg, var(--naranja-claro), var(--naranja));
+      box-shadow: 0 13px 28px rgba(255,123,32,.25);
+    }
+    .boton-principal::after { content: "›"; font-size: 28px; line-height: 1; }
+    .boton-principal:hover, .boton-contacto:hover { transform: translateY(-2px); }
+
+    .guia { width: min(1180px, calc(100% - 28px)); margin: auto; padding: 62px 0 34px; }
+    .titulo-seccion { max-width: 670px; margin: 0 auto 36px; text-align: center; }
+    .sobretitulo { margin: 0 0 8px; color: var(--naranja); font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    .titulo-seccion h2, .contacto h2 { margin: 0; font-family: var(--serif); font-weight: 400; letter-spacing: -.025em; }
+    .titulo-seccion h2 { font-size: clamp(2.35rem, 8vw, 4.1rem); line-height: 1.03; }
+    .titulo-seccion > p:last-child { margin: 17px auto 0; max-width: 520px; color: #527180; line-height: 1.65; }
+    .ornamento { width: 148px; margin: 18px auto 0; display: flex; align-items: center; }
+    .ornamento::before, .ornamento::after { content: ""; flex: 1; height: 1px; background: var(--naranja); }
+    .ornamento span { width: 9px; height: 9px; background: var(--naranja); transform: rotate(45deg); }
+    .rejilla { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .tarjeta {
+      position: relative;
+      min-height: 164px;
+      padding: 22px 12px 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(5,72,94,.04);
+      border-radius: 24px;
+      text-align: center;
+      font-size: .98rem;
+      font-weight: 700;
+      line-height: 1.28;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.75);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+    .fondo-azul { background: linear-gradient(145deg, #f7fbfb, #e8f3f4); }
+    .fondo-rosa { background: linear-gradient(145deg, #fff9f5, #f8eae4); }
+    .fondo-neutro { background: linear-gradient(145deg, #fbfbfa, #eeeef0); }
+    .icono { width: 67px; height: 67px; display: grid; place-items: center; }
+    .icono img { width: 100%; height: 100%; object-fit: contain; }
+    .icono-respaldo { width: 100%; height: 100%; display: grid; place-items: center; color: var(--azul-800); font-size: 46px; font-weight: 400; }
+    .tarjeta::after { content: "›"; position: absolute; right: 14px; bottom: 8px; font-size: 24px; opacity: 0; transform: translateX(-5px); transition: .2s ease; }
+    .tarjeta:hover { transform: translateY(-5px); border-color: rgba(255,132,43,.32); box-shadow: 0 18px 36px rgba(4,54,72,.1); }
+    .tarjeta:hover::after { opacity: 1; transform: none; }
+
+    .contacto {
+      width: min(1120px, calc(100% - 36px));
+      margin: 34px auto 76px;
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      border-radius: 30px;
+      color: white;
+      background: linear-gradient(135deg, var(--azul-950), var(--azul-800));
+      box-shadow: 0 22px 44px rgba(0,54,74,.18);
+    }
+    .contacto h2 { font-size: clamp(2rem, 7vw, 3.2rem); line-height: 1.08; }
+    .contacto p:last-child { max-width: 560px; margin: 14px 0 0; color: rgba(255,255,255,.75); line-height: 1.6; }
+    .boton-contacto { padding: 0 25px; color: var(--azul-950); background: white; }
+    .pie { padding: 0 28px 122px; text-align: center; color: #62808e; }
+    .pie strong { display: block; margin-bottom: 7px; color: var(--texto); font-family: var(--serif); font-size: 1.5rem; font-weight: 400; }
+    .pie p { margin: 0; font-size: .9rem; }
+
+    .navegacion-inferior {
+      position: fixed;
+      z-index: 30;
+      left: 14px;
+      right: 14px;
+      bottom: max(12px, env(safe-area-inset-bottom));
+      min-height: 74px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: center;
+      padding: 6px 8px;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 28px;
+      color: rgba(255,255,255,.84);
+      background: rgba(0,62,85,.96);
+      box-shadow: 0 17px 45px rgba(0,39,54,.3);
+      backdrop-filter: blur(18px);
+    }
+    .navegacion-inferior a { min-height: 58px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; border-radius: 20px; font-size: .76rem; }
+    .navegacion-inferior b { font-size: 23px; line-height: 1; }
+    .navegacion-inferior .activo { color: #8ae0d1; background: rgba(57,166,166,.13); font-weight: 800; }
+
+    .velo-menu { position: fixed; inset: 0; z-index: 39; background: rgba(0,35,48,.62); opacity: 0; pointer-events: none; transition: opacity .25s ease; }
+    .velo-menu.abierto { opacity: 1; pointer-events: auto; }
+    .menu-movil {
+      position: fixed;
+      z-index: 40;
+      inset: 0 0 0 auto;
+      width: min(88vw, 390px);
+      padding: 24px;
+      background: #fffdfa;
+      box-shadow: -28px 0 70px rgba(0,33,46,.26);
+      visibility: hidden;
+      transform: translateX(104%);
+      transition: transform .3s ease, visibility 0s .3s;
+    }
+    .menu-movil.abierto { visibility: visible; transform: none; transition: transform .3s ease; }
+    .menu-movil-cabecera { display: flex; align-items: center; justify-content: space-between; padding-bottom: 24px; border-bottom: 1px solid #e5ecee; font-family: var(--serif); font-size: 1.5rem; }
+    .cerrar-menu { width: 44px; height: 44px; border: 0; border-radius: 14px; color: var(--texto); background: #edf5f5; font-size: 27px; cursor: pointer; }
+    .menu-movil nav { display: grid; gap: 5px; padding: 20px 0; }
+    .menu-movil nav a { min-height: 54px; display: flex; align-items: center; gap: 15px; padding: 0 14px; border-radius: 14px; font-weight: 700; }
+    .menu-movil nav a:hover { background: #eaf5f4; }
+
+    :focus-visible { outline: 3px solid #ffb06d; outline-offset: 4px; }
+
+    @media (min-width: 600px) {
+      .cabecera-fondo { padding-inline: 28px; }
+      .cabecera { height: 132px; }
+      .portada { min-height: 540px; }
+      .contenido-portada { padding: 78px 56px 64px; }
+      .guia { width: min(1180px, calc(100% - 56px)); padding-top: 80px; }
+      .rejilla { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+      .tarjeta { min-height: 190px; padding: 28px 20px 22px; font-size: 1.05rem; }
+      .contacto { padding: 48px; }
+    }
+    @media (min-width: 900px) {
+      .cabecera { height: 150px; }
+      .portada { min-height: 560px; }
+      .contenido-portada { padding: 82px 68px 66px; }
+      .marca { width: 120px; height: 84px; }
+      .menu-escritorio { display: flex; }
+      .boton-menu, .navegacion-inferior { display: none; }
+      .rejilla { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+      .tarjeta { min-height: 205px; }
+      .contacto { flex-direction: row; align-items: center; justify-content: space-between; }
+      .contacto > div { max-width: 700px; }
+      .pie { padding-bottom: 42px; }
+    }
+    @media (max-width: 399px) {
+      .cabecera-fondo { padding-inline: 10px; }
+      .cabecera { height: 105px; }
+      .portada { min-height: 500px; border-radius: 24px; }
+      .contenido-portada { padding: 58px 27px 46px; }
+      .portada h1 { font-size: 2.75rem; }
+      .marca { width: 92px; height: 68px; }
+      .guia { width: calc(100% - 20px); }
+      .tarjeta { min-height: 150px; border-radius: 20px; font-size: .9rem; }
+      .icono { width: 58px; height: 58px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <section class="cabecera-fondo" aria-labelledby="titulo-principal">
+      <header class="cabecera">
+        <a class="marca" href="#inicio" aria-label="Sie Casa Hotel, inicio">
+          <img class="logo-img" src="imagenes/logo sie.png" alt="50 px" height="50 px"
+               onload="this.nextElementSibling.hidden=true" onerror="this.hidden=true">
+          <span class="logo-respaldo">
+            <span class="logo-simbolo">✣</span>
+            <span class="logo-nombre">sie</span>
+            <span class="logo-leyenda">CASA HOTEL</span>
+          </span>
+        </a>
+
+        <nav class="menu-escritorio" aria-label="Navegación principal">
+          <a href="#inicio">Inicio</a>
+          <a href="#guia">Explorar</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+
+        <button class="boton-menu" id="abrirMenu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuMovil">
+          <span class="hamburguesa" aria-hidden="true"></span>
+        </button>
+      </header>
+
+      <section class="portada" id="inicio">
+        <div class="contenido-portada">
+          <p class="etiqueta">✦ Tu guía de estadía</p>
+          <h1 id="titulo-principal">Bienvenido a<br>Sie Casa Hotel</h1>
+          <span class="separador" aria-hidden="true"></span>
+          <p class="descripcion-portada">Tu estadía en Villa de Leyva<br>comienza aquí.</p>
+          <a class="boton-principal" href="#guia">Conoce tu hotel</a>
+        </div>
+      </section>
+    </section>
+
+    <section class="guia" id="guia" aria-labelledby="titulo-guia">
+      <div class="titulo-seccion">
+        <p class="sobretitulo">Guía del huésped</p>
+        <h2 id="titulo-guia">Todo lo que necesitas</h2>
+        <span class="ornamento" aria-hidden="true"><span></span></span>
+        <p>Encuentra rápidamente la información para disfrutar tu visita.</p>
+      </div>
+
+      <div class="rejilla">
+        <a class="tarjeta fondo-rosa" href="bienvenida.html">
+          <span class="icono"><img src="icono/bienvenido-de-nuevo.png" alt="" onload="this.nextElementSibling.hidden=true" onerror="this.hidden=true"><span class="icono-respaldo">⌂</span></span>
+          <span>Bienvenida</span>
+        </a>
+        <a class="tarjeta fondo-azul" href="como-llegar.html">
+          <span class="icono"><img src="icono/mapa.png" alt="" onload="this.nextElementSibling.hidden=true" onerror="this.hidden=true"><span class="icono-respaldo">⌖</span></span>
+          <span>Cómo llegar</span>
+        </a>
+        <a class="tarjeta fondo-azul" href="check-in-check-out.html">
+          <span class="icono"><img src="icono/lista-de-verificacion.png" alt="" onload="this.nextElementSibling.hidden=true" onerror="this.hidden=true"><span class="icono-respaldo">⚿</span></span>
+          <span>Check-in / Check-out</span>
+        </a>
+        <a class="tarjeta fondo-azul" href="wifi.html">
+          <span class="icono"><img src="icono/wifi.png" alt="" onload="this.nextElementSibling.hidden=true" onerror="this.hidden=true"><span class="icono-respaldo">⌁</span></span>
+          <span>Wi-Fi</span>
+        </a>
+        <a class="tarjeta fondo-rosa" href="reglas.html">
+          <span class="icono"><img src="icono/reglas-de-la-casa.png" alt="" onload="this.nextElementSibling.hidden=true" onerror="this.hidden=true"><span class="icono-respaldo">▤</span></span>
+          <span>Reglas de la casa</span>
+        </a>
+        <a class="tarjeta fondo-rosa" href="preguntas.html">
+          <span class="icono"><img src="icono/ayudar.png" alt="" onload="this.nextElementSibling.hidden=true" onerror="this.hidden=true"><span class="icono-respaldo">?</span></span>
+          <span>Preguntas frecuentes</span>
+        </a>
+        <a class="tarjeta fondo-azul" href="decoracion.html">
+          <span class="icono"><img src="icono/globos.png" alt="" onload="this.nextElementSibling.hidden=true" onerror="this.hidden=true"><span class="icono-respaldo">🛒</span></span>
+          <span>Planes de Decoración</span>
+        </a>
+        <a class="tarjeta fondo-neutro" href="restaurantes.html">
+          <span class="icono"><img src="icono/desayuno.png" alt="" onload="this.nextElementSibling.hidden=true" onerror="this.hidden=true"><span class="icono-respaldo">♨</span></span>
+          <span>Desayuno</span>
+        </a>
+        <a class="tarjeta fondo-azul" href="lugares.html">
+          <span class="icono"><img src="icono/mapa-de-viaje.png" alt="" onload="this.nextElementSibling.hidden=true" onerror="this.hidden=true"><span class="icono-respaldo">◇</span></span>
+          <span>Lugares para visitar</span>
+        </a>
+            
+        <a class="tarjeta fondo-rosa" href="calificar.html">
+          <span class="icono"><img src="icono/resenas.png" alt="" onload="this.nextElementSibling.hidden=true" onerror="this.hidden=true"><span class="icono-respaldo">☆</span></span>
+          <span>Califica tu estadía</span>
+          <a class="tarjeta fondo-rosa" href="Servicios.html">
+          <span class="icono"><img src="icono/cliente.png" alt="" onload="this.nextElementSibling.hidden=true" onerror="this.hidden=true"><span class="icono-respaldo">☆</span></span>
+          <span>servicios</span>
+                  <a class="tarjeta fondo-rosa" href="reservar.html">
+          <span class="icono"><img src="icono/reserva.png" alt="" onload="this.nextElementSibling.hidden=true" onerror="this.hidden=true"><span class="icono-respaldo">☆</span></span>
+          <span>Reservar</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="contacto" id="contacto" aria-labelledby="titulo-contacto">
+      <div>
+        <p class="sobretitulo">Estamos para ayudarte</p>
+        <h2 id="titulo-contacto">¿Necesitas algo durante tu estadía?</h2>
+        <p>Comunícate con recepción y con gusto te orientaremos.</p>
+      </div>
+      <!-- Cambia el número por el WhatsApp real del hotel -->
+      <a class="boton-contacto" data-cms-href="whatsapp_recepcion" href="https://wa.me/573124510742">Contactar recepción</a>
+    </section>
+
+   <footer class="pie">
+  <a data-cms-href="sitio_web" href="https://siecasahotel.com/sie-casahotel/" target="_blank" rel="noopener">
+    <strong>Sie Casa Hotel</strong>
+    <p>Villa de Leyva, Boyacá</p>
+  </a>
+</footer>
+  </main>
+
+  <nav class="navegacion-inferior" aria-label="Navegación móvil">
+    <a class="activo" href="#inicio"><b aria-hidden="true">⌂</b><span>Inicio</span></a>
+    <a href="#guia"><b aria-hidden="true">◇</b><span>Explorar</span></a>
+    <a href="#contacto"><b aria-hidden="true">☏</b><span>Contacto</span></a>
+  </nav>
+
+  <div class="velo-menu" id="veloMenu"></div>
+  <aside class="menu-movil" id="menuMovil" aria-hidden="true">
+    <div class="menu-movil-cabecera">
+      <span>Sie Casa Hotel</span>
+      <button class="cerrar-menu" id="cerrarMenu" type="button" aria-label="Cerrar menú">×</button>
+    </div>
+    <nav aria-label="Menú móvil">
+      <a href="#inicio">⌂ Inicio</a>
+      <a href="#guia">◇ Explorar</a>
+      <a href="#contacto">☏ Contacto</a>
+      <a href="bienvenida.html">Información del huésped</a>
+      <a href="como-llegar.html">Cómo llegar</a>
+      <a href="preguntas.html">Preguntas frecuentes</a>
+    </nav>
+  </aside>
+
+  <script>
+    const abrirMenu = document.getElementById('abrirMenu');
+    const cerrarMenu = document.getElementById('cerrarMenu');
+    const menuMovil = document.getElementById('menuMovil');
+    const veloMenu = document.getElementById('veloMenu');
+
+    function cambiarMenu(abierto) {
+      menuMovil.classList.toggle('abierto', abierto);
+      veloMenu.classList.toggle('abierto', abierto);
+      menuMovil.setAttribute('aria-hidden', String(!abierto));
+      abrirMenu.setAttribute('aria-expanded', String(abierto));
+      document.body.classList.toggle('menu-abierto', abierto);
+      if (abierto) cerrarMenu.focus();
+    }
+
+    abrirMenu.addEventListener('click', () => cambiarMenu(true));
+    cerrarMenu.addEventListener('click', () => cambiarMenu(false));
+    veloMenu.addEventListener('click', () => cambiarMenu(false));
+    menuMovil.querySelectorAll('a').forEach(enlace => {
+      enlace.addEventListener('click', () => cambiarMenu(false));
+    });
+    document.addEventListener('keydown', evento => {
+      if (evento.key === 'Escape') cambiarMenu(false);
+    });
+  </script>
+  <script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+  <script src="js/cms-data.js"></script>
+</body>
+</html>

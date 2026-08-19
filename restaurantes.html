@@ -64,8 +64,8 @@
         <article class="bloque">
           <div class="icono" aria-hidden="true">☕</div>
           <h2>Horario de desayuno</h2>
-          <p>El desayuno para nuestros huéspedes se sirve en <strong>Chuska Cocina</strong>.</p>
-          <div class="dato">Todos los días de <strong>8:30 a. m. a 11:00 a. m.</strong></div>
+          <p>El desayuno para nuestros huéspedes se sirve en <strong data-cms="lugar_desayuno">Chuska Cocina</strong>.</p>
+          <div class="dato" data-cms-template="desayuno-horario">Todos los días de 8:30 a. m. a 11:00 a. m.</div>
           <p>Te recomendamos llegar con tiempo para disfrutarlo con tranquilidad dentro del horario establecido.</p>
         </article>
 
@@ -73,7 +73,7 @@
           <div class="icono" aria-hidden="true">⌖</div>
           <h2>Cómo llegar a Chuska Cocina</h2>
           <p>Puedes abrir la ubicación directamente en Google Maps y seguir la ruta desde tu ubicación actual.</p>
-          <a class="boton boton-mapa" href="https://maps.app.goo.gl/TTTWGMExRWGcTSYr5" target="_blank" rel="noopener noreferrer">Abrir ubicación en Google Maps ›</a>
+          <a class="boton boton-mapa" data-cms-href="ubicacion_desayuno" href="https://maps.app.goo.gl/TTTWGMExRWGcTSYr5" target="_blank" rel="noopener noreferrer">Abrir ubicación en Google Maps ›</a>
           <p>Si tienes alguna dificultad para encontrar el restaurante, puedes comunicarte con recepción.</p>
         </article>
       </div>
@@ -87,7 +87,7 @@
     </section>
 
     <footer class="pie">
-  <a href="https://siecasahotel.com/sie-casahotel/" target="_blank" rel="noopener">
+  <a data-cms-href="sitio_web" href="https://siecasahotel.com/sie-casahotel/" target="_blank" rel="noopener">
     <strong>Sie Casa Hotel</strong>
     <p>Villa de Leyva, Boyacá</p>
   </a>
@@ -114,5 +114,6 @@
     function cambiarMenu(abierto){menuMovil.classList.toggle('abierto',abierto);veloMenu.classList.toggle('abierto',abierto);menuMovil.setAttribute('aria-hidden',String(!abierto));abrirMenu.setAttribute('aria-expanded',String(abierto));document.body.classList.toggle('menu-abierto',abierto);if(abierto)cerrarMenu.focus()}
     abrirMenu.addEventListener('click',()=>cambiarMenu(true));cerrarMenu.addEventListener('click',()=>cambiarMenu(false));veloMenu.addEventListener('click',()=>cambiarMenu(false));menuMovil.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>cambiarMenu(false)));document.addEventListener('keydown',e=>{if(e.key==='Escape')cambiarMenu(false)});
   </script>
+  <script src="js/cms-data.js"></script>
 </body>
 </html>

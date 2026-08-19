@@ -1,0 +1,22 @@
+{
+  "nombre_hotel": "Sie Casa Hotel",
+  "ciudad": "Villa de Leyva, Boyacá",
+  "whatsapp_recepcion": "573124510742",
+  "telefono_emergencia": "3148597252",
+  "checkin": "3:00 p. m.",
+  "checkout": "11:00 a. m.",
+  "zonas_sociales": "8:00 a. m. a 8:00 p. m.",
+  "horario_recepcion": "8:10 a. m. a 9:30 p. m.",
+  "horario_desayuno": "8:30 a. m. a 11:00 a. m.",
+  "lugar_desayuno": "Chuska Cocina",
+  "ubicacion_desayuno": "https://maps.app.goo.gl/TTTWGMExRWGcTSYr5",
+  "wifi_casa_a": "Casasie2_5G",
+  "clave_wifi_casa_a": "Sie2026#",
+  "wifi_casa_b": "Todas las redes de Casa B",
+  "clave_wifi_casa_b": "Casasieb2026",
+  "estacion_cafe": "Estación de café disponible de 7:00 a. m. a 11:00 p. m., totalmente gratuita para nuestros huéspedes.",
+  "parqueadero": "Parqueadero para huéspedes ubicado aproximadamente a una cuadra y media del hotel.",
+  "politica_fumar": "Prohibido fumar en las habitaciones y en las áreas sociales. Únicamente está permitido fumar en la terraza.",
+  "motor_reservas": "https://engine.lobbypms.com/sie-casa-hotel",
+  "sitio_web": "https://siecasahotel.com/sie-casahotel/"
+}
