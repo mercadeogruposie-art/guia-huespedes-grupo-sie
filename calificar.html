@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#004b66">
+  <meta name="description" content="Califica tu estadía en Sie Casa Hotel.">
+  <title>Califica tu estadía | Sie Casa Hotel</title>
+ <link rel="icon" type="image/png" href="imagenes/logo-sie.png">
+  <style>
+    :root {
+      --azul-950:#00364c;
+      --azul-900:#004b66;
+      --azul-800:#075c75;
+      --texto:#073f5a;
+      --naranja:#ff842b;
+      --naranja-claro:#ffa454;
+      --fondo:#fbfaf7;
+      --serif:Georgia,"Times New Roman",serif;
+      --sans:Arial,Helvetica,sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-width:320px;
+      background:var(--fondo);
+      color:var(--texto);
+      font-family:var(--sans);
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+
+    .cabecera-fondo{
+      padding:0 18px 28px;
+      background:
+        radial-gradient(circle at 12% 4%,rgba(40,153,176,.32),transparent 26%),
+        linear-gradient(135deg,#00394f,#005570 70%,#00435e);
+    }
+    .cabecera{
+      width:min(1180px,100%);
+      height:118px;
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .marca{
+      width:104px;
+      height:76px;
+      display:grid;
+      place-items:center;
+    }
+    .logo-img{width:88%;height:88%;object-fit:contain}
+    .volver{
+      min-height:46px;
+      padding:0 18px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:999px;
+      color:white;
+      border:1px solid rgba(255,255,255,.22);
+      background:rgba(255,255,255,.08);
+      font-weight:700;
+    }
+
+    .hero{
+      width:min(1180px,100%);
+      margin:auto;
+      padding:62px 32px;
+      border-radius:30px;
+      color:white;
+      background:
+        linear-gradient(120deg,rgba(0,54,76,.72),rgba(0,75,102,.45)),
+        url("imagenes/Banner_.jpg") center/cover no-repeat;
+      box-shadow:0 24px 55px rgba(0,28,42,.24);
+    }
+    .etiqueta{
+      margin:0 0 14px;
+      color:#ffd0a9;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+    .hero h1{
+      margin:0;
+      max-width:760px;
+      font-family:var(--serif);
+      font-size:clamp(2.8rem,8vw,5rem);
+      font-weight:400;
+      line-height:1;
+      letter-spacing:-.03em;
+    }
+    .hero p:last-child{
+      max-width:680px;
+      margin:20px 0 0;
+      color:rgba(255,255,255,.88);
+      font-size:1.1rem;
+      line-height:1.65;
+    }
+
+    main{
+      width:min(920px,calc(100% - 28px));
+      margin:auto;
+      padding:58px 0 76px;
+    }
+
+    .tarjeta{
+      padding:34px;
+      border-radius:30px;
+      background:white;
+      border:1px solid rgba(7,63,90,.08);
+      box-shadow:0 18px 38px rgba(0,54,74,.09);
+      text-align:center;
+    }
+
+    .icono{
+      width:72px;
+      height:72px;
+      margin:0 auto 20px;
+      display:grid;
+      place-items:center;
+      border-radius:22px;
+      background:#fff1e5;
+      font-size:2.2rem;
+    }
+
+    .tarjeta h2{
+      margin:0;
+      font-family:var(--serif);
+      font-size:clamp(2rem,6vw,3.4rem);
+      font-weight:400;
+    }
+
+    .tarjeta p{
+      max-width:640px;
+      margin:16px auto 0;
+      color:#5c7885;
+      line-height:1.7;
+      font-size:1.04rem;
+    }
+
+    .estrellas{
+      margin:24px 0 8px;
+      font-size:2rem;
+      letter-spacing:.12em;
+      color:var(--naranja);
+    }
+
+    .boton{
+      min-height:58px;
+      margin-top:26px;
+      padding:0 28px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      border-radius:999px;
+      background:linear-gradient(100deg,var(--naranja-claro),var(--naranja));
+      color:var(--azul-950);
+      font-weight:800;
+      box-shadow:0 13px 28px rgba(255,123,32,.2);
+    }
+    .boton::after{content:"›";font-size:27px;line-height:1}
+
+    .nota{
+      margin-top:22px;
+      color:#748b95;
+      font-size:.9rem;
+      line-height:1.5;
+    }
+
+    footer{
+      padding:0 24px 42px;
+      text-align:center;
+      color:#6b8590;
+      font-size:.9rem;
+    }
+
+    @media(min-width:700px){
+      .cabecera-fondo{padding-inline:28px}
+      .hero{padding:76px 58px}
+      .tarjeta{padding:48px}
+    }
+    @media(max-width:420px){
+      .cabecera{height:104px}
+      .marca{width:92px;height:68px}
+      .hero{padding:46px 24px;border-radius:24px}
+      .tarjeta{padding:26px 20px}
+    }
+  </style>
+</head>
+
+<body>
+  <section class="cabecera-fondo">
+    <header class="cabecera">
+      <a class="marca" href="index.html" aria-label="Volver al inicio">
+        <img class="logo-img" src="imagenes/logo sie.png" alt="Sie Casa Hotel">
+      </a>
+      <a class="volver" href="index.html">← Volver</a>
+    </header>
+
+    <section class="hero">
+      <p class="etiqueta">✦ Tu opinión es importante</p>
+      <h1>Califica tu estadía</h1>
+      <p>Gracias por elegir Sie Casa Hotel. Tu experiencia nos ayuda a seguir mejorando y también orienta a otros viajeros.</p>
+    </section>
+  </section>
+
+  <main>
+    <section class="tarjeta">
+      <div class="icono">☆</div>
+      <h2>Queremos conocer tu experiencia</h2>
+      <div class="estrellas" aria-hidden="true">★★★★★</div>
+
+      <p>
+        Gracias por hospedarte con nosotros. Cada visita es diferente y tu opinión nos ayuda a entender
+        qué estamos haciendo bien y qué podemos seguir mejorando.
+      </p>
+
+      <p>
+        Puedes contarnos cómo te sentiste durante tu estadía, qué te pareció la atención, la limpieza,
+        la comodidad de la habitación, nuestra ubicación o cualquier detalle que haya sido importante para ti.
+      </p>
+
+      <p>
+        También valoramos mucho tus sugerencias. Si hubo algo que no cumplió tus expectativas,
+        queremos conocerlo para seguir trabajando en una mejor experiencia para nuestros huéspedes.
+      </p>
+
+      <p>
+        Tu reseña también puede ayudar a otros viajeros que están planeando su visita a Villa de Leyva
+        y quieren conocer la experiencia de quienes ya se hospedaron en Sie Casa Hotel.
+      </p>
+
+      <a class="boton"
+         href="https://g.page/r/CUra-K8APfiXECE/review"
+         target="_blank"
+         rel="noopener">
+         Compartir mi experiencia en Google
+      </a>
+<a class="boton boton-secundario" href="index.html">Volver al inicio</a>
+      <div class="nota">El botón abrirá directamente nuestra página de reseñas en Google.</div>
+    </section>
+  </main>
+
+ <footer class="pie">
+  <a href="https://siecasahotel.com/sie-casahotel/" target="_blank" rel="noopener">
+    <strong>Sie Casa Hotel</strong>
+    <p>Villa de Leyva, Boyacá</p>
+  </a>
+</footer>
+</body>
+</html>

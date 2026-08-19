@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#004b66">
+  <meta name="description" content="Lugares recomendados para visitar en Villa de Leyva.">
+  <title>Lugares para visitar | Sie Casa Hotel</title>
+ <link rel="icon" type="image/png" href="imagenes/logo-sie.png">
+  <style>
+    :root {
+      --azul-950:#00364c;
+      --azul-900:#004b66;
+      --azul-800:#075c75;
+      --texto:#073f5a;
+      --naranja:#ff842b;
+      --naranja-claro:#ffa454;
+      --fondo:#fbfaf7;
+      --serif:Georgia,"Times New Roman",serif;
+      --sans:Arial,Helvetica,sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      min-width:320px;
+      background:var(--fondo);
+      color:var(--texto);
+      font-family:var(--sans);
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+
+    .cabecera-fondo{
+      padding:0 18px 28px;
+      background:
+        radial-gradient(circle at 12% 4%,rgba(40,153,176,.32),transparent 26%),
+        linear-gradient(135deg,#00394f,#005570 70%,#00435e);
+    }
+    .cabecera{
+      width:min(1180px,100%);
+      height:118px;
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .marca{
+      width:104px;
+      height:76px;
+      display:grid;
+      place-items:center;
+    }
+    .logo-img{width:88%;height:88%;object-fit:contain}
+    .volver{
+      min-height:46px;
+      padding:0 18px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      border-radius:999px;
+      color:white;
+      border:1px solid rgba(255,255,255,.22);
+      background:rgba(255,255,255,.08);
+      font-weight:700;
+    }
+
+    .hero{
+      width:min(1180px,100%);
+      margin:auto;
+      padding:60px 32px;
+      border-radius:30px;
+      color:white;
+      background:
+  linear-gradient(120deg,rgba(0,54,76,.72),rgba(0,75,102,.45)),
+  url("imagenes/lugares.jpg") center/cover no-repeat;
+    }
+    .etiqueta{
+      margin:0 0 14px;
+      color:#ffd0a9;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+    .hero h1{
+      margin:0;
+      max-width:760px;
+      font-family:var(--serif);
+      font-size:clamp(2.8rem,8vw,5rem);
+      font-weight:400;
+      line-height:1;
+      letter-spacing:-.03em;
+    }
+    .hero p:last-child{
+      max-width:700px;
+      margin:20px 0 0;
+      color:rgba(255,255,255,.86);
+      font-size:1.1rem;
+      line-height:1.65;
+    }
+
+    main{
+      width:min(1180px,calc(100% - 28px));
+      margin:auto;
+      padding:54px 0 76px;
+    }
+    .intro{
+      max-width:760px;
+      margin:0 auto 34px;
+      text-align:center;
+    }
+    .intro h2{
+      margin:0;
+      font-family:var(--serif);
+      font-size:clamp(2rem,6vw,3.5rem);
+      font-weight:400;
+    }
+    .intro p{
+      margin:14px auto 0;
+      color:#5d7885;
+      line-height:1.65;
+    }
+
+    .lugares{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:18px;
+    }
+    .lugar{
+      padding:26px;
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+      border-radius:26px;
+      background:white;
+      border:1px solid rgba(7,63,90,.08);
+      box-shadow:0 16px 34px rgba(0,54,74,.08);
+    }
+    .numero{
+      width:44px;
+      height:44px;
+      display:grid;
+      place-items:center;
+      border-radius:14px;
+      color:var(--azul-950);
+      background:#fff1e5;
+      font-weight:900;
+    }
+    .lugar h3{
+      margin:0;
+      font-family:var(--serif);
+      font-size:1.7rem;
+      font-weight:400;
+    }
+    .lugar p{
+      margin:0;
+      color:#526f7c;
+      line-height:1.6;
+    }
+    .meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:auto;
+    }
+    .tag{
+      padding:7px 11px;
+      border-radius:999px;
+      background:#eef6f6;
+      color:#416774;
+      font-size:.82rem;
+      font-weight:700;
+    }
+    .mapa{
+      min-height:45px;
+      margin-top:4px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:0 18px;
+      border-radius:999px;
+      background:linear-gradient(100deg,var(--naranja-claro),var(--naranja));
+      color:var(--azul-950);
+      font-weight:800;
+      align-self:flex-start;
+    }
+
+    .aviso{
+      margin-top:32px;
+      padding:24px 26px;
+      border-radius:24px;
+      background:linear-gradient(145deg,#edf7f6,#f9fbfa);
+      color:#496a78;
+      line-height:1.65;
+    }
+    .aviso strong{color:var(--texto)}
+
+    .mensaje-final{
+      margin-top:38px;
+      padding:34px;
+      border-radius:30px;
+      color:white;
+      background:linear-gradient(135deg,var(--azul-950),var(--azul-800));
+      box-shadow:0 22px 44px rgba(0,54,74,.18);
+    }
+    .mensaje-final .sobretitulo-final{
+      margin:0 0 10px;
+      color:#ffd0a9;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+    .mensaje-final h2{
+      margin:0;
+      max-width:980px;
+      font-family:var(--serif);
+      font-size:clamp(2rem,7vw,4rem);
+      font-weight:400;
+      line-height:1.05;
+      letter-spacing:-.03em;
+    }
+    .mensaje-final p{
+      max-width:900px;
+      margin:18px 0 0;
+      color:rgba(255,255,255,.82);
+      line-height:1.65;
+      font-size:1.05rem;
+    }
+    .acciones-final{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:28px;
+    }
+    .boton-final{
+      min-height:54px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:0 28px;
+      border-radius:999px;
+      font-weight:800;
+    }
+    .boton-final.principal{
+      background:linear-gradient(100deg,var(--naranja-claro),var(--naranja));
+      color:var(--azul-950);
+    }
+    .boton-final.secundario{
+      color:white;
+      border:1px solid rgba(255,255,255,.28);
+      background:rgba(255,255,255,.08);
+    }
+
+    footer{
+      padding:0 24px 42px;
+      text-align:center;
+      color:#6b8590;
+      font-size:.9rem;
+    }
+
+    @media(min-width:700px){
+      .cabecera-fondo{padding-inline:28px}
+      .hero{padding:74px 58px}
+      .lugares{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    @media(min-width:1050px){
+      .lugares{grid-template-columns:repeat(3,minmax(0,1fr))}
+    }
+    @media(max-width:420px){
+      .cabecera{height:104px}
+      .marca{width:92px;height:68px}
+      .hero{padding:46px 24px;border-radius:24px}
+      .lugar{padding:22px}
+    }
+  </style>
+</head>
+
+<body>
+  <section class="cabecera-fondo">
+    <header class="cabecera">
+      <a class="marca" href="index.html" aria-label="Volver al inicio">
+        <img class="logo-img" src="imagenes/logo sie.png" alt="Sie Casa Hotel">
+      </a>
+      <a class="volver" href="index.html">← Volver</a>
+    </header>
+
+    <section class="hero">
+      <p class="etiqueta">✦ Descubre Villa de Leyva</p>
+      <h1>Lugares para visitar</h1>
+      <p>Una selección más amplia de experiencias gastronómicas, históricas, culturales y naturales para disfrutar durante tu estadía en Villa de Leyva.</p>
+    </section>
+  </section>
+
+  <main>
+    <section class="intro">
+      <h2>Imperdibles de Villa de Leyva</h2>
+      <p>Descubre una selección amplia de lugares recomendados en Villa de Leyva y sus alrededores, con opciones de gastronomía, historia, cultura, paleontología, miradores y naturaleza.</p>
+    </section>
+
+    <section class="lugares">
+      <article class="lugar">
+        <div class="numero">01</div>
+        <h3>Chuska Cocina</h3>
+        <p>Una parada gastronómica imperdible durante tu visita a Villa de Leyva. Disfruta de Chuska Cocina, el restaurante mejor calificado de Villa de Leyva, con una propuesta de cocina con identidad local en un ambiente acogedor.
+</p>
+        <div class="meta"><span class="tag">Gastronomía</span><span class="tag">Cocina de autor</span></div>
+        <a class="mapa" target="_blank" rel="noopener" href="https://maps.app.goo.gl/TTTWGMExRWGcTSYr5">Ver en Google Maps</a>
+      </article>
+      <article class="lugar">
+        <div class="numero">02</div>
+        <h3>Plaza Mayor</h3>
+        <p>El corazón del centro histórico de Villa de Leyva, rodeado de arquitectura colonial y punto de encuentro para recorrer a pie el centro del municipio.</p>
+        <div class="meta"><span class="tag">Centro histórico</span><span class="tag">Caminata</span></div>
+        <a class="mapa" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Plaza+Mayor+Villa+de+Leyva">Ver en Google Maps</a>
+      </article>
+      <article class="lugar">
+        <div class="numero">03</div>
+        <h3>Casa Terracota</h3>
+        <p>Una singular obra arquitectónica construida principalmente en arcilla y reconocida por sus formas orgánicas.</p>
+        <div class="meta"><span class="tag">Arquitectura</span><span class="tag">Fotografía</span></div>
+        <a class="mapa" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Casa+Terracota+Villa+de+Leyva">Ver en Google Maps</a>
+      </article>
+      <article class="lugar">
+        <div class="numero">04</div>
+        <h3>Pozos Azules</h3>
+        <p>Pozos artificiales conocidos por sus tonalidades azules y verdes producidas por los minerales presentes en el suelo.</p>
+        <div class="meta"><span class="tag">Naturaleza</span><span class="tag">Paisaje</span></div>
+        <a class="mapa" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Pozos+Azules+Villa+de+Leyva">Ver en Google Maps</a>
+      </article>
+      <article class="lugar">
+        <div class="numero">05</div>
+        <h3>Museo Comunitario El Fósil</h3>
+        <p>Museo comunitario de la vereda Monquirá que conserva un importante ejemplar de pliosaurio y una amplia colección paleontológica.</p>
+        <div class="meta"><span class="tag">Paleontología</span><span class="tag">Familias</span></div>
+        <a class="mapa" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Museo+El+Fósil+Villa+de+Leyva">Ver en Google Maps</a>
+      </article>
+      <article class="lugar">
+        <div class="numero">06</div>
+        <h3>Santuario de Fauna y Flora Iguaque</h3>
+        <p>Área protegida de alta montaña con bosques altoandinos, páramo y lagunas de origen glaciar.</p>
+        <div class="meta"><span class="tag">Naturaleza</span><span class="tag">Senderismo</span></div>
+        <a class="mapa" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Santuario+de+Fauna+y+Flora+Iguaque">Ver en Google Maps</a>
+      </article>
+      <article class="lugar">
+        <div class="numero">07</div>
+        <h3>Casa Museo Antonio Nariño</h3>
+        <p>Casa colonial vinculada a los últimos años de Antonio Nariño, con colecciones sobre su legado y la historia política de Colombia.</p>
+        <div class="meta"><span class="tag">Historia</span><span class="tag">Museo</span></div>
+        <a class="mapa" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Casa+Museo+Antonio+Nariño+Villa+de+Leyva">Ver en Google Maps</a>
+      </article>
+      <article class="lugar">
+        <div class="numero">08</div>
+        <h3>Casa Museo Antonio Ricaurte</h3>
+        <p>Casa natal del capitán Antonio Ricaurte, convertida en museo y reconocida como parte del patrimonio cultural local.</p>
+        <div class="meta"><span class="tag">Historia</span><span class="tag">Patrimonio</span></div>
+        <a class="mapa" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Casa+Museo+Antonio+Ricaurte+Villa+de+Leyva">Ver en Google Maps</a>
+      </article>
+      <article class="lugar">
+        <div class="numero">09</div>
+        <h3>Museo de Arte Religioso El Carmen</h3>
+        <p>Museo con una importante colección de pintura, escultura, textiles y piezas de tradición carmelitana.</p>
+        <div class="meta"><span class="tag">Arte</span><span class="tag">Cultura</span></div>
+        <a class="mapa" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Museo+El+Carmen+Villa+de+Leyva">Ver en Google Maps</a>
+      </article>
+      <article class="lugar">
+        <div class="numero">10</div>
+        <h3>Casa Museo Luis Alberto Acuña</h3>
+        <p>Espacio dedicado a la obra de Luis Alberto Acuña, con pinturas, murales, esculturas y terracotas.</p>
+        <div class="meta"><span class="tag">Arte</span><span class="tag">Museo</span></div>
+        <a class="mapa" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Casa+Museo+Luis+Alberto+Acuña+Villa+de+Leyva">Ver en Google Maps</a>
+      </article>
+      <article class="lugar">
+        <div class="numero">11</div>
+        <h3>Museo Paleontológico</h3>
+        <p>Museo de la Universidad Nacional de Colombia que conserva fósiles del periodo Cretácico y una colección científica de la región.</p>
+        <div class="meta"><span class="tag">Paleontología</span><span class="tag">Ciencia</span></div>
+        <a class="mapa" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Museo+Paleontológico+Villa+de+Leyva">Ver en Google Maps</a>
+      </article>
+      <article class="lugar">
+        <div class="numero">12</div>
+        <h3>Parque Arqueológico de Monquirá</h3>
+        <p>Sitio arqueológico conocido por sus monumentos líticos y su relación con prácticas astronómicas y rituales muiscas.</p>
+        <div class="meta"><span class="tag">Arqueología</span><span class="tag">Cultura muisca</span></div>
+        <a class="mapa" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Parque+Arqueológico+de+Monquirá+Villa+de+Leyva">Ver en Google Maps</a>
+      </article>
+      <article class="lugar">
+        <div class="numero">13</div>
+        <h3>Observatorio Astronómico de Zaquencipá</h3>
+        <p>Espacio dedicado a la observación del cielo, con telescopios y actividades de astronomía.</p>
+        <div class="meta"><span class="tag">Astronomía</span><span class="tag">Experiencia nocturna</span></div>
+        <a class="mapa" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Observatorio+Astronómico+de+Zaquencipá">Ver en Google Maps</a>
+      </article>
+      <article class="lugar">
+        <div class="numero">14</div>
+        <h3>Mirador Colina El Santo</h3>
+        <p>Mirador natural desde donde se obtiene una vista panorámica del casco urbano y las montañas de Villa de Leyva.</p>
+        <div class="meta"><span class="tag">Mirador</span><span class="tag">Senderismo</span></div>
+        <a class="mapa" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Mirador+Colina+El+Santo+Villa+de+Leyva">Ver en Google Maps</a>
+      </article>
+      <article class="lugar">
+        <div class="numero">15</div>
+        <h3>Valle Escondido</h3>
+        <p>Zona rural de paisaje natural reconocida por su entorno tranquilo y su cercanía con el histórico Molino de la Primavera.</p>
+        <div class="meta"><span class="tag">Naturaleza</span><span class="tag">Paisaje rural</span></div>
+        <a class="mapa" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Valle+Escondido+Villa+de+Leyva">Ver en Google Maps</a>
+      </article>
+      <article class="lugar">
+        <div class="numero">16</div>
+        <h3>Molino de la Primavera</h3>
+        <p>Antigua edificación colonial de arquitectura industrial donde se conserva maquinaria tradicional para moler granos.</p>
+        <div class="meta"><span class="tag">Historia</span><span class="tag">Arquitectura</span></div>
+        <a class="mapa" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Molino+de+la+Primavera+Villa+de+Leyva">Ver en Google Maps</a>
+      </article>
+      <article class="lugar">
+        <div class="numero">17</div>
+        <h3>Pozo de la Vieja</h3>
+        <p>Atractivo natural ubicado en la vereda El Roble, alimentado por aguas del río Cane.</p>
+        <div class="meta"><span class="tag">Naturaleza</span><span class="tag">Zona rural</span></div>
+        <a class="mapa" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Pozo+de+la+Vieja+Villa+de+Leyva">Ver en Google Maps</a>
+      </article>
+      <article class="lugar">
+        <div class="numero">18</div>
+        <h3>Alto de las Cometas</h3>
+        <p>Mirador de la zona desértica desde donde se observa el centro urbano y el contraste entre el valle y las montañas.</p>
+        <div class="meta"><span class="tag">Mirador</span><span class="tag">Paisaje</span></div>
+        <a class="mapa" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Alto+de+las+Cometas+Villa+de+Leyva">Ver en Google Maps</a>
+      </article>
+      <article class="lugar">
+        <div class="numero">19</div>
+        <h3>Parque Antonio Ricaurte</h3>
+        <p>Espacio público del centro histórico, cercano a la Casa Museo Antonio Ricaurte.</p>
+        <div class="meta"><span class="tag">Centro histórico</span><span class="tag">Caminata</span></div>
+        <a class="mapa" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Parque+Antonio+Ricaurte+Villa+de+Leyva">Ver en Google Maps</a>
+      </article>
+      <article class="lugar">
+        <div class="numero">20</div>
+        <h3>Museo Prehistórico</h3>
+        <p>Espacio de historia natural con fósiles y recreaciones relacionadas con la formación de la vida y la prehistoria.</p>
+        <div class="meta"><span class="tag">Historia natural</span><span class="tag">Familias</span></div>
+        <a class="mapa" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Museo+Prehistórico+Villa+de+Leyva">Ver en Google Maps</a>
+      </article>
+    </section>
+
+    <section class="aviso">
+      <strong>Antes de salir:</strong> los horarios, tarifas, condiciones de ingreso y disponibilidad de algunos atractivos pueden cambiar. Recomendamos verificar directamente con cada lugar el mismo día de la visita. 
+    </section>
+  </main>
+
+  <section class="cabecera-fondo" style="background:none; padding-top:0;">
+    <div style="width:min(1180px,calc(100% - 28px)); margin:auto;">
+      <section class="mensaje-final">
+        <p class="sobretitulo-final">Antes de llegar</p>
+        <h2>Villa de Leyva tiene mucho por descubrir</h2>
+        <p>Guarda esta guía durante tu estadía y vuelve cuando quieras para consultar más lugares, planes y recomendaciones para disfrutar tu visita.</p>
+        <div class="acciones-final">
+            <a class="boton-final secundario" href="index.html#guia">Volver a la guía</a>
+        </div>
+      </section>
+    </div>
+  </section>
+
+<footer class="pie">
+  <a href="https://siecasahotel.com/sie-casahotel/" target="_blank" rel="noopener">
+    <strong>Sie Casa Hotel</strong>
+    <p>Villa de Leyva, Boyacá</p>
+  </a>
+</footer>
+</body>
+</html>
