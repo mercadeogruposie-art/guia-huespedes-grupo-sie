@@ -1,0 +1,62 @@
+backend:
+  name: git-gateway
+  branch: main
+
+locale: es
+media_folder: "imagenes/uploads"
+public_folder: "/imagenes/uploads"
+publish_mode: simple
+
+collections:
+  - name: "configuracion"
+    label: "Información del hotel"
+    editor:
+      preview: false
+    files:
+      - label: "Datos generales"
+        name: "datos_generales"
+        file: "contenido/datos-hotel.json"
+        format: "json"
+        fields:
+          - { label: "Nombre del hotel", name: "nombre_hotel", widget: "string" }
+          - { label: "Ciudad", name: "ciudad", widget: "string" }
+          - { label: "WhatsApp recepción", name: "whatsapp_recepcion", widget: "string", hint: "Solo números con código de país" }
+          - { label: "Teléfono de emergencia", name: "telefono_emergencia", widget: "string" }
+          - { label: "Check-in", name: "checkin", widget: "string" }
+          - { label: "Check-out", name: "checkout", widget: "string" }
+          - { label: "Horario zonas sociales", name: "zonas_sociales", widget: "string" }
+          - { label: "Horario de recepción", name: "horario_recepcion", widget: "string" }
+          - { label: "Horario desayuno", name: "horario_desayuno", widget: "string" }
+          - { label: "Lugar del desayuno", name: "lugar_desayuno", widget: "string" }
+          - { label: "Enlace ubicación desayuno", name: "ubicacion_desayuno", widget: "string" }
+          - { label: "Red Wi-Fi Casa A", name: "wifi_casa_a", widget: "string" }
+          - { label: "Clave Wi-Fi Casa A", name: "clave_wifi_casa_a", widget: "string" }
+          - { label: "Red Wi-Fi Casa B", name: "wifi_casa_b", widget: "string" }
+          - { label: "Clave Wi-Fi Casa B", name: "clave_wifi_casa_b", widget: "string" }
+          - { label: "Estación de café", name: "estacion_cafe", widget: "text" }
+          - { label: "Parqueadero", name: "parqueadero", widget: "text" }
+          - { label: "Política de fumar", name: "politica_fumar", widget: "text" }
+          - { label: "Enlace motor de reservas", name: "motor_reservas", widget: "string" }
+          - { label: "Sitio web", name: "sitio_web", widget: "string" }
+
+  - name: "textos"
+    label: "Textos de la guía"
+    editor:
+      preview: false
+    files:
+      - label: "Bienvenida"
+        name: "bienvenida"
+        file: "contenido/bienvenida.json"
+        format: "json"
+        fields:
+          - { label: "Título principal", name: "titulo", widget: "string" }
+          - { label: "Texto de bienvenida", name: "texto", widget: "text" }
+          - { label: "Texto del carrusel", name: "texto_carrusel", widget: "string" }
+      - label: "Calificar estadía"
+        name: "calificar"
+        file: "contenido/calificar.json"
+        format: "json"
+        fields:
+          - { label: "Título", name: "titulo", widget: "string" }
+          - { label: "Texto", name: "texto", widget: "text" }
+          - { label: "Enlace de reseña", name: "enlace_resena", widget: "string" }
